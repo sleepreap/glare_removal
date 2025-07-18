@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+gunicorn
+pydantic
+torch
+torchvision
+torchaudio
+python-multipart
+pillow
+requests
+aiohttp

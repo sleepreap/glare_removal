@@ -1,0 +1,11 @@
+htx/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.idea/
+*.swp
+.DS_Store
