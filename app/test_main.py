@@ -38,15 +38,6 @@ def stop_docker():
     subprocess.run(f"docker rm {DOCKER_CONTAINER_NAME}", shell=True)
     print("Docker container stopped.")
 
-async def test_ping():
-    print("Testing /ping...")
-    async with aiohttp.ClientSession() as session:
-        async with session.get(f"{API_URL}/ping") as resp:
-            assert resp.status == 200
-            json_data = await resp.json()
-            assert json_data == {"message": "pong"}
-    print("/ping passed")
-
 async def test_infer():
     print("Testing /infer...")
     async with aiohttp.ClientSession() as session:
@@ -63,7 +54,6 @@ async def test_infer():
 async def main():
     try:
         await start_docker()
-        await test_ping()
         await test_infer()
     finally:
         stop_docker()

@@ -4,14 +4,9 @@ from PIL import Image
 import io
 import base64
 from fastapi import FastAPI
-from pydantic import BaseModel
 from model.model import predict_pipeline
 
 app = FastAPI()
-
-@app.get("/ping")
-async def ping():
-    return {"message": "pong"}
 
 @app.post("/infer")
 async def infer(image: UploadFile = File(...)):
@@ -26,5 +21,5 @@ async def infer(image: UploadFile = File(...)):
     output_img.save(buffered, format="PNG")
     encoded_output = base64.b64encode(buffered.getvalue()).decode("utf-8")
 
-    # Return as JSON
+    # Return a JSON, showing that the image has been processed
     return JSONResponse(content={"image": encoded_output})
