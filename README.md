@@ -1,4 +1,4 @@
-<img width="1405" height="480" alt="image" src="https://github.com/user-attachments/assets/12c0cc39-1aeb-409a-8ab8-00226d8e357d" />## Introduction
+## Introduction
 This is a computer vision based solution to remove glare from greyscale images. The solution uses a autoencoder model with an UNET type architecture to remove the glare from greyscale images. The SD1 dataset is used to train the model and it can be found here:
 [Dataset](https://drive.google.com/file/d/1r4OyMN-4aBEXP-usvrvOvNCEJhoQIRnL/view)
 
